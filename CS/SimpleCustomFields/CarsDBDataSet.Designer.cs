@@ -663,6 +663,7 @@ namespace SimpleCustomFields {
                 this.columnCategory.MaxLength = 7;
                 this.columnDescription.MaxLength = 536870910;
                 this.columnHyperlink.MaxLength = 50;
+                this.columnAmount.DefaultValue = ((decimal)(0m));
                 this.columnRtfContent.MaxLength = 536870910;
             }
             
@@ -1043,7 +1044,7 @@ namespace SimpleCustomFields {
                         int Status, 
                         string Subject, 
                         string Description, 
-                        int Label, 
+                        string Label, 
                         System.DateTime StartTime, 
                         System.DateTime EndTime, 
                         string Location, 
@@ -1053,7 +1054,7 @@ namespace SimpleCustomFields {
                         string ReminderInfo, 
                         decimal Price, 
                         string ContactInfo, 
-                        byte[] Amount) {
+                        int Amount) {
                 CarSchedulingRow rowCarSchedulingRow = ((CarSchedulingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1139,7 +1140,7 @@ namespace SimpleCustomFields {
                 base.Columns.Add(this.columnSubject);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
-                this.columnLabel = new global::System.Data.DataColumn("Label", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnLabel = new global::System.Data.DataColumn("Label", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLabel);
                 this.columnStartTime = new global::System.Data.DataColumn("StartTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStartTime);
@@ -1159,7 +1160,7 @@ namespace SimpleCustomFields {
                 base.Columns.Add(this.columnPrice);
                 this.columnContactInfo = new global::System.Data.DataColumn("ContactInfo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnContactInfo);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
@@ -1171,6 +1172,7 @@ namespace SimpleCustomFields {
                 this.columnLocation.MaxLength = 50;
                 this.columnRecurrenceInfo.MaxLength = 536870910;
                 this.columnReminderInfo.MaxLength = 536870910;
+                this.columnPrice.DefaultValue = ((decimal)(0m));
                 this.columnContactInfo.MaxLength = 536870910;
                 this.columnAmount.ReadOnly = true;
             }
@@ -1863,10 +1865,10 @@ namespace SimpleCustomFields {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Label {
+            public string Label {
                 get {
                     try {
-                        return ((int)(this[this.tableCarScheduling.LabelColumn]));
+                        return ((string)(this[this.tableCarScheduling.LabelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Label\' in table \'CarScheduling\' is DBNull.", e);
@@ -2023,10 +2025,10 @@ namespace SimpleCustomFields {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public byte[] Amount {
+            public int Amount {
                 get {
                     try {
-                        return ((byte[])(this[this.tableCarScheduling.AmountColumn]));
+                        return ((int)(this[this.tableCarScheduling.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'CarScheduling\' is DBNull.", e);
@@ -3082,7 +3084,7 @@ namespace SimpleCustomFields.CarsDBDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public global::System.Data.OleDb.OleDbDataAdapter Adapter {
+        private global::System.Data.OleDb.OleDbDataAdapter Adapter {
             get {
                 if ((this._adapter == null)) {
                     this.InitAdapter();

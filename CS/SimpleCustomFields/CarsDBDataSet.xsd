@@ -324,7 +324,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Picture" msprop:Generator_ColumnVarNameInTable="columnPicture" msprop:Generator_ColumnPropNameInRow="Picture" msprop:Generator_ColumnPropNameInTable="PictureColumn" msprop:Generator_UserColumnName="Picture" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" default="0" minOccurs="0" />
               <xs:element name="RtfContent" msprop:Generator_ColumnVarNameInTable="columnRtfContent" msprop:Generator_ColumnPropNameInRow="RtfContent" msprop:Generator_ColumnPropNameInTable="RtfContentColumn" msprop:Generator_UserColumnName="RtfContent" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -356,7 +356,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Label" msprop:Generator_ColumnVarNameInTable="columnLabel" msprop:Generator_ColumnPropNameInRow="Label" msprop:Generator_ColumnPropNameInTable="LabelColumn" msprop:Generator_UserColumnName="Label" type="xs:int" minOccurs="0" />
+              <xs:element name="Label" msprop:Generator_ColumnVarNameInTable="columnLabel" msprop:Generator_ColumnPropNameInRow="Label" msprop:Generator_ColumnPropNameInTable="LabelColumn" msprop:Generator_UserColumnName="Label" type="xs:string" minOccurs="0" />
               <xs:element name="StartTime" msprop:Generator_ColumnVarNameInTable="columnStartTime" msprop:Generator_ColumnPropNameInRow="StartTime" msprop:Generator_ColumnPropNameInTable="StartTimeColumn" msprop:Generator_UserColumnName="StartTime" type="xs:dateTime" minOccurs="0" />
               <xs:element name="EndTime" msprop:Generator_ColumnVarNameInTable="columnEndTime" msprop:Generator_ColumnPropNameInRow="EndTime" msprop:Generator_ColumnPropNameInTable="EndTimeColumn" msprop:Generator_UserColumnName="EndTime" type="xs:dateTime" minOccurs="0" />
               <xs:element name="Location" msprop:Generator_ColumnVarNameInTable="columnLocation" msprop:Generator_ColumnPropNameInRow="Location" msprop:Generator_ColumnPropNameInTable="LocationColumn" msprop:Generator_UserColumnName="Location" minOccurs="0">
@@ -382,7 +382,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_UserColumnName="Price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_UserColumnName="Price" type="xs:decimal" default="0" minOccurs="0" />
               <xs:element name="ContactInfo" msprop:Generator_ColumnVarNameInTable="columnContactInfo" msprop:Generator_ColumnPropNameInRow="ContactInfo" msprop:Generator_ColumnPropNameInTable="ContactInfoColumn" msprop:Generator_UserColumnName="ContactInfo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -390,7 +390,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Amount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Amount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -407,7 +407,7 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="CarsCarScheduling" msdata:parent="Cars" msdata:child="CarScheduling" msdata:parentkey="ID" msdata:childkey="CarId" msprop:Generator_UserChildTable="CarScheduling" msprop:Generator_ChildPropName="GetCarSchedulingRows" msprop:Generator_UserRelationName="CarsCarScheduling" msprop:Generator_ParentPropName="CarsRow" msprop:Generator_RelationVarName="relationCarsCarScheduling" msprop:Generator_UserParentTable="Cars" />
+      <msdata:Relationship name="CarsCarScheduling" msdata:parent="Cars" msdata:child="CarScheduling" msdata:parentkey="ID" msdata:childkey="CarId" msprop:Generator_UserChildTable="CarScheduling" msprop:Generator_ChildPropName="GetCarSchedulingRows" msprop:Generator_UserRelationName="CarsCarScheduling" msprop:Generator_RelationVarName="relationCarsCarScheduling" msprop:Generator_UserParentTable="Cars" msprop:Generator_ParentPropName="CarsRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
